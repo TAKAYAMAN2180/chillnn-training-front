@@ -3811,9 +3811,9 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
-"chillnn-training-abr@git+ssh://git@github.com:ryoNagata001/chillnn-training-abr.git#dev":
+"chillnn-training-abr@git+ssh://git@github.com:CHILLNN-Training/chillnn-training-abr.git#dev":
   version "1.0.6"
-  resolved "git+ssh://git@github.com:ryoNagata001/chillnn-training-abr.git#1e0152c47d8b4ef7d5a08424b56d417e9dcb6fdc"
+  resolved "git+ssh://git@github.com:CHILLNN-Training/chillnn-training-abr.git#a2c5a37be2e102c384982f433c3775e29629a807"
 
 chokidar@^2.1.8:
   version "2.1.8"

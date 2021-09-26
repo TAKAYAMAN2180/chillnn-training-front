@@ -1,5 +1,5 @@
 #!/bin/sh
-s3Name=chillnn-training-front-spa
+s3Name=chillnn-training-front-nuxt
 profile=stingy
 
 branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')

@@ -93,6 +93,9 @@ sw.*
 dev.yml
 stg.yml
 prd.yml
+dev.env
+stg.env
+prd.env
 
 yarn.lock
 

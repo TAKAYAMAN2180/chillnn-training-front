@@ -13,7 +13,14 @@
             />
         </div>
         <div class="button_container">
-            <app-button :disabled="disabled">新規登録</app-button>
+            <app-button :disabled="disabled" @click="authSignUp"
+                >新規登録</app-button
+            >
+        </div>
+        <div class="link_container">
+            <link-button :to="{ name: 'auth-signin' }"
+                >アカウントをお持ちの方はこちら</link-button
+            >
         </div>
     </div>
 </template>
@@ -23,13 +30,17 @@ import { Component, Vue } from 'nuxt-property-decorator'
 import AuthTitle from '@/components/Organisms/Auth/AuthTitle.vue'
 import AuthInput from '@/components/Organisms/Auth/AuthInput.vue'
 import AppButton from '@/components/Atom/AppButton.vue'
+import LinkButton from '@/components/Atom/LinkButton.vue'
+import { authInteractor } from '~/driver/amplify/auth'
+import { AsyncLoadingAndErrorHandle } from '~/util/decorator/baseDecorator'
 
 @Component({
     layout: 'auth',
     components: {
+        AuthTitle,
         AuthInput,
         AppButton,
-        AuthTitle,
+        LinkButton,
     },
 })
 export default class SignUpPage extends Vue {
@@ -39,11 +50,26 @@ export default class SignUpPage extends Vue {
     public get disabled() {
         return !this.email || !this.password
     }
+
+    @AsyncLoadingAndErrorHandle()
+    public async authSignUp() {
+        await authInteractor.signUp(this.email, this.password)
+        window.alert(
+            '認証用のメールを送信しました。認証コードをご確認ください。'
+        )
+        this.$router.push({
+            name: 'auth-verify',
+            query: {
+                email: this.email,
+                password: this.password,
+            },
+        })
+    }
 }
 </script>
 <style lang="stylus" scoped>
 .auth_signup_container {
-    padding: 80px;
+    padding: 80px 80px 60px;
 
     @media only screen and (max-width: $spSize) {
         padding: 50px 20px;
@@ -56,7 +82,11 @@ export default class SignUpPage extends Vue {
     }
 
     .button_container {
-        padding-top: 10px;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .link_container {
         text-align: center;
     }
 }

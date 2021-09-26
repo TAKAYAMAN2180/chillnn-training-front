@@ -1,6 +1,6 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 import { ChillnnTrainingError, ErrorCode } from 'chillnn-training-abr'
-import { academyAuthInteractor } from '@/driver/amplify/auth'
+import { authInteractor } from '@/driver/amplify/auth'
 
 /**
  * ABRのinterceptor
@@ -18,7 +18,7 @@ class AuthDecorator extends Vue {
         ) => {
             const method = descriptor.value // もともとのメソッドを退避しておきます。
             descriptor.value = async function () {
-                const isSignIn = await academyAuthInteractor.isSignIn()
+                const isSignIn = await authInteractor.isSignIn()
                 if (!isSignIn) {
                     if (process.client) {
                         setTimeout(() => {

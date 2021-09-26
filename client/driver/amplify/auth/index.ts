@@ -1,7 +1,7 @@
 import { Auth } from '@aws-amplify/auth'
 import { Scalars } from 'chillnn-training-abr'
 
-class AcademyAuthInteractor {
+class AuthInteractor {
     public async isSignIn(): Promise<boolean> {
         try {
             await Auth.currentAuthenticatedUser({
@@ -64,4 +64,4 @@ class AcademyAuthInteractor {
     }
 }
 
-export const academyAuthInteractor = new AcademyAuthInteractor()
+export const authInteractor = new AuthInteractor()

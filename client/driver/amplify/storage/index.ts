@@ -2,7 +2,7 @@ import { Storage } from '@aws-amplify/storage'
 import { S3Object } from 'chillnn-training-abr'
 import { awsmobile } from '~/plugins/amplify'
 
-class AcademyStorageInteractor {
+class StorageInteractor {
     public async uploadPublicImg(
         path: string, //
         file: File,
@@ -24,4 +24,4 @@ class AcademyStorageInteractor {
     }
 }
 
-export const academyStorageInteractor = new AcademyStorageInteractor()
+export const storageInteractor = new StorageInteractor()

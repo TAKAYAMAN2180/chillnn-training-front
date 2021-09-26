@@ -1,4 +1,4 @@
-const envPath = `env/${process.env.ENV || 'dev'}.env`
+const envPath = `env/app/${process.env.ENV || 'dev'}.env`
 require('dotenv').config({
     path: envPath,
 })
@@ -27,10 +27,11 @@ export default {
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [],
+    loading: '~/components/Organisms/Loading.vue',
     srcDir: './client/',
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: [],
+    plugins: [{ src: '~/plugins/amplify.ts', ssr: false }],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -43,6 +44,12 @@ export default {
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
+        [
+            '@nuxtjs/dotenv',
+            {
+                filename: `../${envPath}`,
+            },
+        ],
         // https://go.nuxtjs.dev/pwa
         '@nuxtjs/pwa',
         '@nuxtjs/style-resources',

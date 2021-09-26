@@ -1,14 +1,15 @@
-import { IInfoObject } from '~/store/modules/info';
-import { AcademyError, AcademyErrorCode } from "academy-abr";
+import { ChillnnTrainingError } from 'chillnn-training-abr'
+import { IInfoObject } from '~/store/modules/info'
 
-export function errorHandle(err: AcademyErrorCode): IInfoObject {
+export function errorHandle(err: ChillnnTrainingError): IInfoObject {
     if (process.env.ENV === 'dev' || !process.env.ENV) {
         // tslint:disable-next-line: no-console
-        console.error(err);
+        // eslint-disable-next-line no-console
+        console.error(err)
     }
     return {
         type: 'ERROR',
-        errCode: err.academyErrorCode as AcademyError,
+        errCode: err.chillnnErrorCode,
         message: err.getMessage(),
-    };
+    }
 }

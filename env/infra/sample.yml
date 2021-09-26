@@ -1,0 +1,22 @@
+#######################################
+#
+# インフラで利用する環境変数のtemplate
+#
+#######################################
+#######################################
+# settings
+#######################################
+AWS_REGION: ap-northeast-1
+AWS_CLI_PROFILE: ''
+#######################################
+# cloud front
+#######################################
+CLOUDFRONT_DYNAMIC_CACHE_POLICY_NAME: chillnn-training-front-dynamic-cache-policy-${self:provider.stage}
+CLOUDFRONT_STATIC_CACHE_POLICY_NAME: chillnn-training-front-static-cache-policy-${self:provider.stage}
+CLOUDFRONT_ALIASES:
+    - ''
+CLOUDFRONT_ALIAS_ACM_ARN: ''
+#######################################
+# s3
+#######################################
+S3_BUCKET_NAME: ''

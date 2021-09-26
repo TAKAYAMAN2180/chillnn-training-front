@@ -88,3 +88,8 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# 環境変数
+dev.yml
+stg.yml
+prd.yml

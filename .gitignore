@@ -93,3 +93,5 @@ sw.*
 dev.yml
 stg.yml
 prd.yml
+
+yarn.lock

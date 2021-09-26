@@ -19,8 +19,3 @@ export async function callApi<U, T>(query: any, variables: T): Promise<U> {
         throw new ChillnnTrainingError(errorCode)
     }
 }
-
-// ブラウザの場合10分間キャッシュする, サーバーの場合1秒間キャッシュする
-export const CACHE_TIME_MILLI = (process.browser && 10 * 60 * 1000) || 1000
-// 1回のfetchで30日分とってくる
-export const DATE_SUM = 30

@@ -189,7 +189,7 @@ resources:
                         Compress: true
                         TargetOriginId: 'S3BucketOrigin'
                         ViewerProtocolPolicy: 'redirect-to-https'
-                    DefaultRootObject: ''
+                    DefaultRootObject: 'index.html'
                     Enabled: true
                     PriceClass: 'PriceClass_200'
                     HttpVersion: 'http2'
@@ -213,6 +213,10 @@ resources:
                                           ],
                                   }
                     CustomErrorResponses:
+                        - ErrorCachingMinTTL: 300
+                          ErrorCode: 403
+                          ResponseCode: 200
+                          ResponsePagePath: /index.html
                         - ErrorCachingMinTTL: 300
                           ErrorCode: 503
                           ResponseCode: 200

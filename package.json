@@ -20,7 +20,7 @@
         "@nuxtjs/axios": "^5.13.6",
         "@nuxtjs/dotenv": "^1.4.1",
         "@nuxtjs/pwa": "^3.3.5",
-        "@nuxtjs/style-resources": "^1.0.0",
+        "@nuxtjs/style-resources": "^1.2.1",
         "chillnn-training-abr": "git+ssh://git@github.com:ryoNagata001/chillnn-training-abr.git#dev",
         "core-js": "^3.16.3",
         "nuxt": "^2.15.8",

@@ -1,8 +1,9 @@
 <template>
-    <div>Top</div>
+    <div></div>
 </template>
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+
 @Component({})
-export default class Top extends Vue {}
+export default class UserPage extends Vue {}
 </script>

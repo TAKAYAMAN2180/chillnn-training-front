@@ -12,7 +12,7 @@ export default {
     },
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'chillnn-training-front',
+        title: 'CHILLSTAGRAM',
         meta: [
             { charset: 'utf-8' },
             {
@@ -45,6 +45,7 @@ export default {
     modules: [
         // https://go.nuxtjs.dev/pwa
         '@nuxtjs/pwa',
+        '@nuxtjs/style-resources',
     ],
 
     // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -52,6 +53,13 @@ export default {
         manifest: {
             lang: 'ja',
         },
+    },
+
+    styleResources: {
+        stylus: [
+            '~/assets/styles/color.styl',
+            '~/assets/styles/variables.styl',
+        ],
     },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -46,6 +46,8 @@ export default class DefaultLayout extends Vue {
     }
 
     .app {
+        margin: 0 auto;
+        max-width: 800px;
         padding: 15px $sidePaddingPC;
 
         @media only screen and (max-width: $spSize) {

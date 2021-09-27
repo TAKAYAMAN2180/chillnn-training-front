@@ -1,6 +1,6 @@
 <template>
     <div class="app_header_container">
-        <div class="left_container">
+        <nuxt-link :to="{ name: 'index' }" tag="div" class="left_container">
             <!-- left -->
             <div class="logo">
                 <img src="~/assets/img/logo.svg" />
@@ -8,7 +8,8 @@
             <div class="title">
                 <img src="~/assets/img/CHILLSTAGRAM.png" />
             </div>
-        </div>
+        </nuxt-link>
+
         <div class="right_container">
             <!-- right -->
             <div>{{ name }}さん</div>
@@ -50,6 +51,7 @@ export default class AppHeader extends Vue {
         display: flex;
         align-items: center;
         height: auto;
+        cursor: pointer;
 
         .logo {
             width: 30px;

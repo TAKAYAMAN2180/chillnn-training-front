@@ -25,7 +25,7 @@ import { UserModel } from 'chillnn-training-abr'
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import { AsyncLoadingAndErrorHandle } from '~/util/decorator/baseDecorator'
 // component
-import UserEdit from '@/components/Organisms/User/Icon/UserEdit.vue'
+import UserEdit from '~/components/Organisms/User/Edit/UserEdit.vue'
 import AppButton from '@/components/Atom/AppButton.vue'
 import LinkButton from '@/components/Atom/LinkButton.vue'
 
@@ -51,6 +51,8 @@ export default class AppHeaderUserEdit extends Vue {
 </script>
 <style lang="stylus" scoped>
 .user_edit_container {
+    height: 100%;
+
     .title_container {
         text-align: center;
         padding-bottom: 30px;

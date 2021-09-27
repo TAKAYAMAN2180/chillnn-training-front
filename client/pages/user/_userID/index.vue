@@ -27,6 +27,13 @@ export default class UserPage extends Vue {
         const userID = this.$route.params.userID
         this.userModel = await userInteractor.fetchUserModelByUserID(userID)
     }
+
+    public get isMyPage() {
+        return (
+            this.userModel &&
+            this.userModel.userID === this.$route.params.userID
+        )
+    }
 }
 </script>
 <style lang="stylus" scoped>

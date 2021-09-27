@@ -1,6 +1,11 @@
-import { IUserMastRepository, UserMast } from 'chillnn-training-abr'
+import {
+    IUserMastRepository,
+    UserMast,
+    UserMastRepositoryCacheAdaptor,
+} from 'chillnn-training-abr'
 import { callApi } from '../base'
 import {
+    FetchAllUserMastQuery,
     FetchMyUserMastQuery,
     FetchUserMastByUserIDQuery,
     FetchUserMastByUserIDQueryVariables,
@@ -45,6 +50,14 @@ class GraphqlUserMastRepository implements IUserMastRepository {
             ).fetchUserMastByUserID || null
         )
     }
+
+    async fetchAllUser(): Promise<UserMast[]> {
+        return (
+            await callApi<FetchAllUserMastQuery, {}>(query.fetchAllUserMast, {})
+        ).fetchAllUserMast
+    }
 }
 
-export const userMastRepository = new GraphqlUserMastRepository()
+export const userMastRepository = new UserMastRepositoryCacheAdaptor(
+    new GraphqlUserMastRepository()
+)

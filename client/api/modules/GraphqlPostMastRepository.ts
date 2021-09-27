@@ -1,4 +1,8 @@
-import { IPostMastRepository, PostMast } from 'chillnn-training-abr'
+import {
+    IPostMastRepository,
+    PostMast,
+    PostMastRepositoryCacheAdaptor,
+} from 'chillnn-training-abr'
 import { callApi } from '../base'
 import * as query from '@/driver/amplify/graphql/queries'
 import * as mutation from '@/driver/amplify/graphql/mutations'
@@ -61,4 +65,6 @@ class GraphqlPostMastRepository implements IPostMastRepository {
     }
 }
 
-export const postMastRepository = new GraphqlPostMastRepository()
+export const postMastRepository = new PostMastRepositoryCacheAdaptor(
+    new GraphqlPostMastRepository()
+)

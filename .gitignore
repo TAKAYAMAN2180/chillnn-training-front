@@ -120,3 +120,4 @@ amplifytools.xcconfig
 .secret-*
 #amplify-do-not-edit-end
 .graphqlconfig.yml
+yarn.lock

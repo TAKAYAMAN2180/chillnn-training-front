@@ -35,7 +35,6 @@ export default class UserPage extends Vue {
 
     .user_icon_wrapper {
         margin: 0 auto;
-        width: 30%;
     }
 
     .image_table_wrapper {

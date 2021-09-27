@@ -29,11 +29,25 @@ export default class UserIcon extends Vue {
 </script>
 <style lang="stylus" scoped>
 .icon_container {
+    text-align: center;
+
     .icon {
+        display: inline-block;
+        height: 200px;
+        width: 200px;
+        max-width: 100%;
+
+        @media only screen and (max-width: $spSize) {
+            height: 100px;
+            width: 100px;
+        }
+
         img {
+            object-fit: cover;
             box-shadow: 0 0 5px $shadowColor;
             border-radius: 10000px;
             width: 100%;
+            height: 100%;
         }
     }
 
@@ -41,6 +55,10 @@ export default class UserIcon extends Vue {
         padding-top: 10px;
         text-align: center;
         font-size: 14px;
+
+        @media only screen and (max-width: $spSize) {
+            font-size: 12px;
+        }
     }
 }
 </style>

@@ -13,12 +13,20 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 import AppHeader from '@/components/Organisms/AppHeader/index.vue'
+import { authInteractor } from '~/driver/amplify/auth'
 @Component({
     components: {
         AppHeader,
     },
 })
-export default class DefaultLayout extends Vue {}
+export default class DefaultLayout extends Vue {
+    public async created() {
+        const isSignIn = await authInteractor.isSignIn()
+        if (!isSignIn) {
+            this.$router.push({ name: 'auth-signin' })
+        }
+    }
+}
 </script>
 <style lang="stylus" scoped>
 .app_container {

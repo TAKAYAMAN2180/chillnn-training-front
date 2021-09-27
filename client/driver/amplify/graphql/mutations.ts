@@ -6,6 +6,7 @@ export const addPost = /* GraphQL */ `
   mutation AddPost($input: PostMastInput!) {
     addPost(input: $input) {
       createdAt
+      deletedAt
       image {
         bucket
         key
@@ -21,6 +22,7 @@ export const deletePost = /* GraphQL */ `
   mutation DeletePost($postID: ID!) {
     deletePost(postID: $postID) {
       createdAt
+      deletedAt
       image {
         bucket
         key

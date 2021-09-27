@@ -4,6 +4,7 @@
 
 export type PostMastInput = {
   createdAt: number,
+  deletedAt?: number | null,
   image: S3ObjectInput,
   ownerUserID: string,
   postID: string,
@@ -19,6 +20,7 @@ export type S3ObjectInput = {
 export type PostMast = {
   __typename: "PostMast",
   createdAt: number,
+  deletedAt?: number | null,
   image: S3Object,
   ownerUserID: string,
   postID: string,
@@ -59,6 +61,7 @@ export type AddPostMutation = {
   addPost:  {
     __typename: "PostMast",
     createdAt: number,
+    deletedAt?: number | null,
     image:  {
       __typename: "S3Object",
       bucket: string,
@@ -79,6 +82,7 @@ export type DeletePostMutation = {
   deletePost:  {
     __typename: "PostMast",
     createdAt: number,
+    deletedAt?: number | null,
     image:  {
       __typename: "S3Object",
       bucket: string,
@@ -113,6 +117,24 @@ export type UpdateUserMastMutation = {
   },
 };
 
+export type FetchAllUserMastQuery = {
+  fetchAllUserMast:  Array< {
+    __typename: "UserMast",
+    createdAt: number,
+    email: string,
+    name: string,
+    updatedAt: number,
+    userIcon?:  {
+      __typename: "S3Object",
+      bucket: string,
+      key: string,
+      region: string,
+      url: string,
+    } | null,
+    userID: string,
+  } >,
+};
+
 export type FetchMyUserMastQuery = {
   fetchMyUserMast?:  {
     __typename: "UserMast",
@@ -139,6 +161,7 @@ export type FetchPostByPostIDQuery = {
   fetchPostByPostID?:  {
     __typename: "PostMast",
     createdAt: number,
+    deletedAt?: number | null,
     image:  {
       __typename: "S3Object",
       bucket: string,
@@ -159,6 +182,7 @@ export type FetchPostsByOwnerUserIDQuery = {
   fetchPostsByOwnerUserID:  Array< {
     __typename: "PostMast",
     createdAt: number,
+    deletedAt?: number | null,
     image:  {
       __typename: "S3Object",
       bucket: string,

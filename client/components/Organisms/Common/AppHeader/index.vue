@@ -30,7 +30,7 @@ import { UserModel } from 'chillnn-training-abr'
 // components
 import UserEdit from './modules/UserEdit.vue'
 import AppButton from '@/components/Atom/AppButton.vue'
-import AppModal from '@/components/Organisms/AppModal/index.vue'
+import AppModal from '@/components/Organisms/Common/AppModal/index.vue'
 
 @Component({
     components: {

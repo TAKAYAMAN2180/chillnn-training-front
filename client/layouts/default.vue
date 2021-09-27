@@ -13,7 +13,7 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 import { UserModel } from 'chillnn-training-abr'
-import AppHeader from '@/components/Organisms/AppHeader/index.vue'
+import AppHeader from '@/components/Organisms/Common/AppHeader/index.vue'
 import { authInteractor } from '~/driver/amplify/auth'
 import { userInteractor } from '~/api'
 @Component({

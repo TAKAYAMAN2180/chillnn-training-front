@@ -17,11 +17,8 @@
 </template>
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import AppHeader from '@/components/Organisms/AppHeader/index.vue'
 @Component({
-    components: {
-        AppHeader,
-    },
+    components: {},
 })
 export default class DefaultLayout extends Vue {}
 </script>

@@ -11,12 +11,13 @@
         </div>
         <div class="right_container">
             <!-- right -->
-            <div>〇〇さん</div>
+            <div>{{ name }}さん</div>
         </div>
     </div>
 </template>
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Prop, Vue } from 'nuxt-property-decorator'
+import { UserModel } from 'chillnn-training-abr'
 // components
 import AppButton from '@/components/Atom/AppButton.vue'
 
@@ -25,7 +26,13 @@ import AppButton from '@/components/Atom/AppButton.vue'
         AppButton,
     },
 })
-export default class AppHeader extends Vue {}
+export default class AppHeader extends Vue {
+    @Prop({ required: true }) userModel!: UserModel
+
+    public get name() {
+        return this.userModel.name
+    }
+}
 </script>
 <style lang="stylus" scoped>
 .app_header_container {

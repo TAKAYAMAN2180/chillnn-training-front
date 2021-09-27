@@ -3813,7 +3813,7 @@ chardet@^0.7.0:
 
 "chillnn-training-abr@git+ssh://git@github.com:CHILLNN-Training/chillnn-training-abr.git#dev":
   version "1.0.6"
-  resolved "git+ssh://git@github.com:CHILLNN-Training/chillnn-training-abr.git#a2c5a37be2e102c384982f433c3775e29629a807"
+  resolved "git+ssh://git@github.com:CHILLNN-Training/chillnn-training-abr.git#1eb63c015171189e49aaf2527061d5eea4186524"
 
 chokidar@^2.1.8:
   version "2.1.8"

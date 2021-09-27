@@ -2,7 +2,7 @@
     <div class="app_container">
         <div class="app_header">
             <!-- header -->
-            <app-header />
+            <app-header v-if="userModel" :user-model="userModel" />
         </div>
         <div class="app">
             <!-- app -->
@@ -12,19 +12,25 @@
 </template>
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import { UserModel } from 'chillnn-training-abr'
 import AppHeader from '@/components/Organisms/AppHeader/index.vue'
 import { authInteractor } from '~/driver/amplify/auth'
+import { userInteractor } from '~/api'
 @Component({
     components: {
         AppHeader,
     },
 })
 export default class DefaultLayout extends Vue {
+    public userModel: UserModel | null = null
+
     public async created() {
         const isSignIn = await authInteractor.isSignIn()
         if (!isSignIn) {
             this.$router.push({ name: 'auth-signin' })
         }
+
+        this.userModel = await userInteractor.fetchMyUserModel()
     }
 }
 </script>

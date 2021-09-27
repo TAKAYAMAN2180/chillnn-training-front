@@ -95,7 +95,9 @@ export default class UserIcon extends Vue {
             align-items: center;
 
             .input {
+                box-sizing: border-box;
                 width: 70%;
+                padding-right: 5px;
             }
         }
     }

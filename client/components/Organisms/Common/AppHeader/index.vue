@@ -10,50 +10,35 @@
             </div>
         </nuxt-link>
 
-        <div class="right_container" @click="openModal">
+        <nuxt-link
+            :to="{ name: 'user-userID', params: { userID: userModel.userID } }"
+            tag="div"
+            class="right_container"
+        >
             <!-- right -->
             <div class="edit_button">{{ name }}さん</div>
             <div class="icon">
                 <img :src="userModel.userIcon" />
             </div>
-        </div>
-
-        <app-modal v-model="showEditModal">
-            <!-- modal -->
-            <user-edit :user-model="userModel" />
-        </app-modal>
+        </nuxt-link>
     </div>
 </template>
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from 'nuxt-property-decorator'
+import { Component, Prop, Vue } from 'nuxt-property-decorator'
 import { UserModel } from 'chillnn-training-abr'
 // components
-import UserEdit from './modules/UserEdit.vue'
 import AppButton from '@/components/Atom/AppButton.vue'
-import AppModal from '@/components/Organisms/Common/AppModal/index.vue'
 
 @Component({
     components: {
         AppButton,
-        AppModal,
-        UserEdit,
     },
 })
 export default class AppHeader extends Vue {
     @Prop({ required: true }) userModel!: UserModel
-    public showEditModal = false
 
     public get name() {
         return this.userModel.name
-    }
-
-    @Watch('$route')
-    public isShowToggle() {
-        this.showEditModal = false
-    }
-
-    public openModal() {
-        this.showEditModal = true
     }
 }
 </script>

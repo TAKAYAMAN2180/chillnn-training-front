@@ -41,7 +41,7 @@ export default class AppModal extends Vue {
         max-width: 800px;
         background-color: white;
         padding: 50px 100px;
-        border-radius: 50px;
+        border-radius: 25px;
 
         @media only screen and (max-width: $spSize) {
             font-size: 14px;

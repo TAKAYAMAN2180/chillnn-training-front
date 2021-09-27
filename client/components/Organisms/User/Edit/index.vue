@@ -1,15 +1,5 @@
 <template>
     <div class="user_edit_container">
-        <div v-show="isShowLink" class="title_container">
-            <!-- title -->
-            <link-button
-                :to="{
-                    name: 'user-userID',
-                    params: { userID: userModel.userID },
-                }"
-                >マイページへ</link-button
-            >
-        </div>
         <div class="input_container">
             <!-- user edit -->
             <user-edit :user-model="userModel" />
@@ -23,17 +13,15 @@
 <script lang="ts">
 import { UserModel } from 'chillnn-training-abr'
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
-import { AsyncLoadingAndErrorHandle } from '~/util/decorator/baseDecorator'
 // component
-import UserEdit from '~/components/Organisms/User/Edit/UserEdit.vue'
+import UserEdit from './modules/UserEdit.vue'
 import AppButton from '@/components/Atom/AppButton.vue'
-import LinkButton from '@/components/Atom/LinkButton.vue'
+import { AsyncLoadingAndErrorHandle } from '~/util/decorator/baseDecorator'
 
 @Component({
     components: {
         UserEdit,
         AppButton,
-        LinkButton,
     },
 })
 export default class AppHeaderUserEdit extends Vue {

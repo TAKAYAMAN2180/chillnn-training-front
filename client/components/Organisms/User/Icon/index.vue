@@ -7,16 +7,37 @@
         <div class="name">
             <!-- name -->
             <div>{{ userName }}さん</div>
+            <div v-if="showEdit" class="edit_button" @click="openModal">
+                <img src="~/assets/img/edit.svg" />
+            </div>
         </div>
+        <!-- edit -->
+        <app-modal v-model="showEditModal">
+            <user-edit :user-model="userModel" />
+        </app-modal>
     </div>
 </template>
 <script lang="ts">
 import { UserModel } from 'chillnn-training-abr'
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
+// component
+import AppModal from '@/components/Organisms/Common/AppModal/index.vue'
+import UserEdit from '@/components/Organisms/User/Edit/index.vue'
 
-@Component({})
+@Component({
+    components: {
+        AppModal,
+        UserEdit,
+    },
+})
 export default class UserIcon extends Vue {
     @Prop({ required: true }) userModel!: UserModel
+    @Prop({ default: () => false }) showEdit!: boolean
+
+    public showEditModal = false
+    public openModal() {
+        this.showEditModal = true
+    }
 
     get userName() {
         return this.userModel.name
@@ -55,9 +76,17 @@ export default class UserIcon extends Vue {
         padding-top: 10px;
         text-align: center;
         font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         @media only screen and (max-width: $spSize) {
             font-size: 12px;
+        }
+
+        .edit_button {
+            cursor: pointer;
+            padding-left: 15px;
         }
     }
 }

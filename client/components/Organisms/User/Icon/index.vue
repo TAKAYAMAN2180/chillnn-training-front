@@ -13,7 +13,7 @@
         </div>
         <!-- edit -->
         <app-modal v-model="showEditModal">
-            <user-edit :user-model="userModel" />
+            <user-edit :user-model="userModel" @registered="closeModal" />
         </app-modal>
     </div>
 </template>
@@ -37,6 +37,10 @@ export default class UserIcon extends Vue {
     public showEditModal = false
     public openModal() {
         this.showEditModal = true
+    }
+
+    public closeModal() {
+        this.showEditModal = false
     }
 
     get userName() {
@@ -87,6 +91,20 @@ export default class UserIcon extends Vue {
         .edit_button {
             cursor: pointer;
             padding-left: 15px;
+            width: 20px;
+            height: 20px;
+            margin-bottom: 5px;
+
+            @media only screen and (max-width: $spSize) {
+                width: 15px;
+                height: 15px;
+                padding-left: 5px;
+                margin-bottom: 2px;
+            }
+
+            img {
+                width: 100%;
+            }
         }
     }
 }

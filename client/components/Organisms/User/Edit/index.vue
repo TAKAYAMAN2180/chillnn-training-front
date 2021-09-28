@@ -34,6 +34,7 @@ export default class AppHeaderUserEdit extends Vue {
     @AsyncLoadingAndErrorHandle()
     public async register() {
         await this.userModel.register()
+        this.$emit('registered')
     }
 }
 </script>

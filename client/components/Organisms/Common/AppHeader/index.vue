@@ -26,14 +26,8 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
 import { UserModel } from 'chillnn-training-abr'
-// components
-import AppButton from '@/components/Atom/AppButton.vue'
 
-@Component({
-    components: {
-        AppButton,
-    },
-})
+@Component({})
 export default class AppHeader extends Vue {
     @Prop({ required: true }) userModel!: UserModel
 

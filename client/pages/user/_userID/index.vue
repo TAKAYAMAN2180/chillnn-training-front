@@ -86,7 +86,11 @@ export default class UserPage extends Vue {
     padding-top: 50px;
 
     .user_icon_wrapper {
-        margin: 0 auto;
+        margin: 50px auto 0;
+
+        @media only screen and (max-width: $spSize) {
+            margin: 0 auto;
+        }
     }
 
     .image_table_wrapper {

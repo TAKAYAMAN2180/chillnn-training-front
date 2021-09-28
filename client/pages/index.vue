@@ -45,12 +45,18 @@ export default class Top extends Vue {
     }
 
     .user_icon_wrapper {
+        box-sizing: border-box;
         width: 30%;
         margin-right: 5%;
         cursor: pointer;
+        padding-bottom: 30px;
+
+        @media only screen and (max-width: $spSize) {
+            padding-bottom: 20px;
+        }
 
         &.three {
-            margin-right: none;
+            margin-right: 0;
         }
     }
 }

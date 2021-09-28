@@ -37,11 +37,11 @@ export default class Top extends Vue {
 <style lang="stylus" scoped>
 .user_list_container {
     display: flex;
-    padding-top: 100px;
+    padding: 100px 0;
     flex-wrap: wrap;
 
     @media only screen and (max-width: $spSize) {
-        padding-top: 50px;
+        padding: 50px 0;
     }
 
     .user_icon_wrapper {

@@ -83,10 +83,10 @@ export default class UserPage extends Vue {
 </script>
 <style lang="stylus" scoped>
 .user_detail_container {
-    padding-top: 50px;
+    padding: 50px 0;
 
     .user_icon_wrapper {
-        margin: 50px auto 0;
+        margin: 50px auto 50px;
 
         @media only screen and (max-width: $spSize) {
             margin: 0 auto;

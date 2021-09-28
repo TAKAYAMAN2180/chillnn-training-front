@@ -19,7 +19,37 @@ export default {
                 name: 'viewport',
                 content: 'width=device-width, initial-scale=1',
             },
-            { hid: 'description', name: 'description', content: '' },
+            {
+                hid: 'description',
+                name: 'description',
+                content:
+                    'CHILLNNで用いている基本的な機能を全て盛り込んだサービスです',
+            },
+            {
+                hid: 'og:site_name',
+                property: 'og:site_name',
+                content: 'CHILLNN',
+            },
+            {
+                hid: 'og:type',
+                name: 'og:type',
+                content: 'website',
+            },
+            {
+                hid: 'og:title',
+                name: 'og:title',
+                content: 'CHILLSTAGRAM',
+            },
+            {
+                hid: 'og:image',
+                property: 'og:image',
+                content: '/thumbnail.jpg',
+            },
+            {
+                hid: 'twitter:card',
+                name: 'twitter:card',
+                content: 'summary_large_image',
+            },
             { name: 'format-detection', content: 'telephone=no' },
         ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.png' }],

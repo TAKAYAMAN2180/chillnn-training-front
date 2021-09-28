@@ -41,6 +41,12 @@ export default {
                 content: 'CHILLSTAGRAM',
             },
             {
+                hid: 'og:description',
+                name: 'og:description',
+                content:
+                    'CHILLNNの基本的な技術スタックを利用したサンプルアプリケーション',
+            },
+            {
                 hid: 'og:image',
                 property: 'og:image',
                 content: '/thumbnail.jpg',

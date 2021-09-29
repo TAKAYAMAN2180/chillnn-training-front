@@ -20,3 +20,4 @@ CLOUDFRONT_ALIAS_ACM_ARN: '' # ← !!! 自分でACMから証明書を発行す�
 # s3
 #######################################
 S3_BUCKET_NAME: '' # ← !!! バケット名は世界でユニークである必要がある。自分で名前をつけてみましょう
+# ex) S3_BUCKET_NAME: 'chillnn-training-front-nuxt-${self:provider.stage}' <- suffixとして、stage

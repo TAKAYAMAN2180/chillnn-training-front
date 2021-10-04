@@ -135,7 +135,7 @@ export function getPdf(e: any): File {
  * @param e
  */
 export async function getImages(
-    e?: any
+    e: HTMLInputEvent
 ): Promise<Array<{ base64: string; file: File }>> {
     const files = e.target.files as FileList
     // Filelist はmapを使えないのでArray型に変換する

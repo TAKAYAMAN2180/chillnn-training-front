@@ -35,34 +35,6 @@ plugins:
 
 package:
     individually: true
-    exclude:
-        - 'client/**'
-        - 'dist/**'
-        - '.nuxt/dist/client/**' # クライアントサイドのコード
-        - 'amplify/**'
-    patterns:
-        - '!.nuxt/dist/client/**' # クライアントサイドのコード
-        - '!.nuxt/stats/**' # アナライズの結果
-        - '!.serverless/**'
-        - '!amplify/**'
-        - '!client/**'
-        - '!config/**'
-        - '!.editorconfig'
-        - '!.eslintignore'
-        - '!.gitignore'
-        - '!.graphqlconfig.yml'
-        - '!createDeployPackage.*'
-        - '!deploy.sh'
-        - '!package.json'
-        - '!package-deploy.json'
-        - '!README.md'
-        - '!serverless.yml'
-        - '!tsconfig.json'
-        - '!tslint.json'
-        - '!type.d.ts'
-        - '!yarn.lock'
-        - '!dist/**'
-        - config/.env.${self:provider.stage}
 
 custom:
     env:

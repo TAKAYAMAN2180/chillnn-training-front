@@ -121,9 +121,9 @@ resources:
             Properties:
                 CachePolicyConfig:
                     Comment: 'StaticCache'
-                    DefaultTTL: 604800
-                    MinTTL: 604800 # 1週間
-                    MaxTTL: 31536000 # 1年
+                    DefaultTTL: 3600
+                    MinTTL: 3600 # 1時間
+                    MaxTTL: 10800 # 3時間
                     Name: ${self:custom.env.infra.${self:provider.stage}.CLOUDFRONT_STATIC_CACHE_POLICY_NAME}
                     ParametersInCacheKeyAndForwardedToOrigin:
                         CookiesConfig:

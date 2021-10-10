@@ -21,12 +21,6 @@ provider:
                       - '*'
     profile: ${self:custom.env.infra.${self:provider.stage}.AWS_CLI_PROFILE}
     logRetentionInDays: 3
-    # cloudFront:
-    #     cachePolicies:
-    #         dynamicCachePolicy:
-    #             DefaultTTL: 600
-    #             MinTTL: 600 # 10分
-    #             MaxTTL: 1200 # 20分
 
 plugins:
     - serverless-prune-plugin

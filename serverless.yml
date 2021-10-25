@@ -65,6 +65,8 @@ resources:
                           MaxAge: 3000
                           ExposedHeaders:
                               - ETag
+                WebsiteConfiguration:
+                    IndexDocument: index.html
         ## Bucket
         HostS3BucketPolicy:
             Type: AWS::S3::BucketPolicy
@@ -163,21 +165,12 @@ resources:
                     Origins:
                         # Static
                         - Id: 'S3BucketOrigin'
-                          DomainName: ${self:custom.env.infra.${self:provider.stage}.S3_BUCKET_NAME}.s3.amazonaws.com
-                          S3OriginConfig:
-                              OriginAccessIdentity:
-                                  {
-                                      'Fn::Join':
-                                          [
-                                              '',
-                                              [
-                                                  'origin-access-identity/cloudfront/',
-                                                  {
-                                                      Ref: EdgeOriginAccessIdentity,
-                                                  },
-                                              ],
-                                          ],
-                                  }
+                          DomainName: ${self:custom.env.infra.${self:provider.stage}.S3_BUCKET_NAME}.s3-website-${self:provider.region}.amazonaws.com
+                          CustomOriginConfig:
+                              HTTPPort: 80
+                              OriginKeepaliveTimeout: 5
+                              OriginProtocolPolicy: http-only
+                              OriginReadTimeout: 30
                     CustomErrorResponses:
                         - ErrorCachingMinTTL: 300
                           ErrorCode: 403

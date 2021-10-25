@@ -27,7 +27,7 @@ import { AsyncLoadingAndErrorHandle } from '~/util/decorator/baseDecorator'
         AppInput,
     },
 })
-export default class UserIcon extends Vue {
+export default class UserEdit extends Vue {
     @Prop({ required: true }) userModel!: UserModel
 
     get userName() {

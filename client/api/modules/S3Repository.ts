@@ -10,7 +10,7 @@ class S3Repository implements IS3Repository {
         return storageInteractor.uploadPublicImg(
             uniquePath,
             file,
-            `${new Date().getTime()}${file.name}`
+            `${new Date().getTime()}`
         )
     }
 

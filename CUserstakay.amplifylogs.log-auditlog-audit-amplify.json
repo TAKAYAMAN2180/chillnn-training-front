@@ -1,0 +1,24 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "C:\\Users\\takay\\.amplify\\logs\\.log-audit\\log-audit-amplify.json",
+    "files": [
+        {
+            "date": 1686236506610,
+            "name": "C:\\Users\\takay\\.amplify\\logs\\amplify-cli-2023-06-09.log",
+            "hash": "45a4aed636900ca0c1cab82fd8db202d"
+        },
+        {
+            "date": 1686739334961,
+            "name": "C:\\Users\\takay\\.amplify\\logs\\amplify-cli-2023-06-14.log",
+            "hash": "ed11b52fb8e7cf740cb8d67b946f73e8"
+        },
+        {
+            "date": 1686841095364,
+            "name": "/mnt/c/Users/takay/.amplify/logs/amplify-cli-2023-06-15.log",
+            "hash": "ccd5738005b06dac6cf1465261d87c35"
+        }
+    ]
+}

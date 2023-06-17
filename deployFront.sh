@@ -1,6 +1,6 @@
 #!/bin/sh
-s3Name=chillnn-training-front-nuxt
-profile=stingy
+s3Name=chillnn-takayaman2180-training-front-nuxt
+profile=TAKAYAMAN_ADMIN
 
 branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 

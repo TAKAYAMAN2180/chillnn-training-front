@@ -1,4 +1,5 @@
 # chillnn-training-front
+APIをデプロイしたけど、途中でミスってるかも
 
 ## Build Setup
 

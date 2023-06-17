@@ -7,6 +7,7 @@ export const addPost = /* GraphQL */ `
     addPost(input: $input) {
       createdAt
       deletedAt
+      description
       image {
         bucket
         key
@@ -23,6 +24,7 @@ export const deletePost = /* GraphQL */ `
     deletePost(postID: $postID) {
       createdAt
       deletedAt
+      description
       image {
         bucket
         key
@@ -39,6 +41,7 @@ export const updateUserMast = /* GraphQL */ `
     updateUserMast(input: $input) {
       createdAt
       email
+      introduction
       name
       updatedAt
       userIcon {

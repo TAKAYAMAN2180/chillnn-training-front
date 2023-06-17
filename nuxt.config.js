@@ -1,7 +1,5 @@
+import path from 'path';
 const envPath = `env/app/${process.env.ENV || 'dev'}.env`
-require('dotenv').config({
-    path: envPath,
-})
 
 export default {
     // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -105,6 +103,5 @@ export default {
         ],
     },
 
-    // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {},
+
 }

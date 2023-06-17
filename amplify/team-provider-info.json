@@ -1,15 +1,15 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-chillnntrainingfront-dev-170438-authRole",
-      "UnauthRoleArn": "arn:aws:iam::334547292678:role/amplify-chillnntrainingfront-dev-170438-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::334547292678:role/amplify-chillnntrainingfront-dev-170438-authRole",
+      "AuthRoleName": "amplify-chillnntrainingfront-dev-203440-authRole",
+      "UnauthRoleArn": "arn:aws:iam::138063517375:role/amplify-chillnntrainingfront-dev-203440-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::138063517375:role/amplify-chillnntrainingfront-dev-203440-authRole",
       "Region": "ap-northeast-1",
-      "DeploymentBucketName": "amplify-chillnntrainingfront-dev-170438-deployment",
-      "UnauthRoleName": "amplify-chillnntrainingfront-dev-170438-unauthRole",
-      "StackName": "amplify-chillnntrainingfront-dev-170438",
-      "StackId": "arn:aws:cloudformation:ap-northeast-1:334547292678:stack/amplify-chillnntrainingfront-dev-170438/66f95660-1ea0-11ec-9a55-0afd4baf5309",
-      "AmplifyAppId": "d3glkzv6l8ovky"
+      "DeploymentBucketName": "amplify-chillnntrainingfront-dev-203440-deployment",
+      "UnauthRoleName": "amplify-chillnntrainingfront-dev-203440-unauthRole",
+      "StackName": "amplify-chillnntrainingfront-dev-203440",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:138063517375:stack/amplify-chillnntrainingfront-dev-203440/73ce9a40-0aa7-11ee-a3af-0aae4fd7c9b9",
+      "AmplifyAppId": "dcspfs7nmvqwr"
     }
   }
 }

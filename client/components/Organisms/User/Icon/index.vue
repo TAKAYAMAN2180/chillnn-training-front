@@ -15,6 +15,7 @@
         <app-modal v-model="showEditModal">
             <user-edit :user-model="userModel" @registered="closeModal" />
         </app-modal>
+        <div>{{introduction}}</div>
     </div>
 </template>
 <script lang="ts">
@@ -50,6 +51,11 @@ export default class UserIcon extends Vue {
     get userIconUrl() {
         return this.userModel.userIcon
     }
+
+    get introduction(){
+        return this.userModel.introduction
+    }
+
 }
 </script>
 <style lang="stylus" scoped>

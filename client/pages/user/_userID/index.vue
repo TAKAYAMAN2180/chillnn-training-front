@@ -38,6 +38,7 @@ import AppModel from '@/components/Organisms/Common/AppModal/index.vue'
 import AddPost from '@/components/Organisms/Post/AddPost/index.vue'
 import { AsyncLoadingAndErrorHandle } from '~/util/decorator/baseDecorator'
 
+
 @Component({
     components: {
         UserIcon,

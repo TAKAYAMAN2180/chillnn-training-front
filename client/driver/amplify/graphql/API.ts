@@ -5,6 +5,7 @@
 export type PostMastInput = {
   createdAt: number,
   deletedAt?: number | null,
+  description?: string | null,
   image: S3ObjectInput,
   ownerUserID: string,
   postID: string,
@@ -21,6 +22,7 @@ export type PostMast = {
   __typename: "PostMast",
   createdAt: number,
   deletedAt?: number | null,
+  description?: string | null,
   image: S3Object,
   ownerUserID: string,
   postID: string,
@@ -37,6 +39,7 @@ export type S3Object = {
 export type UserMastInput = {
   createdAt: number,
   email: string,
+  introduction?: string | null,
   name: string,
   updatedAt: number,
   userIcon?: S3ObjectInput | null,
@@ -47,6 +50,7 @@ export type UserMast = {
   __typename: "UserMast",
   createdAt: number,
   email: string,
+  introduction?: string | null,
   name: string,
   updatedAt: number,
   userIcon?: S3Object | null,
@@ -62,6 +66,7 @@ export type AddPostMutation = {
     __typename: "PostMast",
     createdAt: number,
     deletedAt?: number | null,
+    description?: string | null,
     image:  {
       __typename: "S3Object",
       bucket: string,
@@ -83,6 +88,7 @@ export type DeletePostMutation = {
     __typename: "PostMast",
     createdAt: number,
     deletedAt?: number | null,
+    description?: string | null,
     image:  {
       __typename: "S3Object",
       bucket: string,
@@ -104,6 +110,7 @@ export type UpdateUserMastMutation = {
     __typename: "UserMast",
     createdAt: number,
     email: string,
+    introduction?: string | null,
     name: string,
     updatedAt: number,
     userIcon?:  {
@@ -122,6 +129,7 @@ export type FetchAllUserMastQuery = {
     __typename: "UserMast",
     createdAt: number,
     email: string,
+    introduction?: string | null,
     name: string,
     updatedAt: number,
     userIcon?:  {
@@ -140,6 +148,7 @@ export type FetchMyUserMastQuery = {
     __typename: "UserMast",
     createdAt: number,
     email: string,
+    introduction?: string | null,
     name: string,
     updatedAt: number,
     userIcon?:  {
@@ -162,6 +171,7 @@ export type FetchPostByPostIDQuery = {
     __typename: "PostMast",
     createdAt: number,
     deletedAt?: number | null,
+    description?: string | null,
     image:  {
       __typename: "S3Object",
       bucket: string,
@@ -183,6 +193,7 @@ export type FetchPostsByOwnerUserIDQuery = {
     __typename: "PostMast",
     createdAt: number,
     deletedAt?: number | null,
+    description?: string | null,
     image:  {
       __typename: "S3Object",
       bucket: string,
@@ -204,6 +215,7 @@ export type FetchUserMastByUserIDQuery = {
     __typename: "UserMast",
     createdAt: number,
     email: string,
+    introduction?: string | null,
     name: string,
     updatedAt: number,
     userIcon?:  {

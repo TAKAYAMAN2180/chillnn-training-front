@@ -1,26 +1,28 @@
 <template>
     <div>
         <div
-            class="image_wrapper"
-            :style="{ backgroundImage: `url(${imgUrl})` }"
-            @click="isShowModal = true"
+            class='image_wrapper'
+            :style='{ backgroundImage: `url(${imgUrl})` }'
+            @click='isShowModal = true'
         />
-        <app-modal v-model="isShowModal">
-            <div class="img_detail">
-                <img :src="imgUrl" />
+        <div> {{description}} </div>
+        <app-modal v-model='isShowModal'>
+            <div class='img_detail'>
+                <img :src='imgUrl' />
+                <div> {{description}} </div>
             </div>
         </app-modal>
     </div>
 </template>
-<script lang="ts">
+<script lang='ts'>
 import { PostModel } from 'chillnn-training-abr'
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
 import AppModal from '@/components/Organisms/Common/AppModal/index.vue'
 
 @Component({
     components: {
-        AppModal,
-    },
+        AppModal
+    }
 })
 export default class PostCardItem extends Vue {
     @Prop({ required: true }) postModel!: PostModel
@@ -29,9 +31,14 @@ export default class PostCardItem extends Vue {
     public get imgUrl() {
         return this.postModel.imageURL
     }
+
+    public get description() {
+        return this.postModel.description
+    }
+
 }
 </script>
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
 .image_wrapper {
     width: 100%;
     padding-bottom: 100%;

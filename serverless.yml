@@ -34,8 +34,8 @@ custom:
     env:
         infra:
             dev: ${file(./env/infra/dev.yml)}
-            stg: ${file(./env/infra/stg.yml)}
-            prd: ${file(./env/infra/prd.yml)}
+#            stg: ${file(./env/infra/stg.yml)}
+#            prd: ${file(./env/infra/prd.yml)}
     defaultStage: dev
     prune:
         automatic: true
@@ -67,6 +67,12 @@ resources:
                               - ETag
                 WebsiteConfiguration:
                     IndexDocument: index.html
+                PublicAccessBlockConfiguration:
+                    BlockPublicAcls: false
+                    BlockPublicPolicy: false
+                    IgnorePublicAcls: false
+                    RestrictPublicBuckets: false
+
         ## Bucket
         HostS3BucketPolicy:
             Type: AWS::S3::BucketPolicy
@@ -132,7 +138,7 @@ resources:
                                 - accept-language
                         QueryStringsConfig:
                             QueryStringBehavior: all
-        # Nuxt CludFrontのDistribution
+        # Nuxt CloudFrontのDistribution
         EdgeDistribution:
             Type: 'AWS::CloudFront::Distribution'
             Properties:

@@ -5,10 +5,10 @@
   "javascript": {
     "framework": "none",
     "config": {
-      "SourceDir": "client",
+      "SourceDir": "src",
       "DistributionDir": "dist",
-      "BuildCommand": "yarn build",
-      "StartCommand": "yarn dev"
+      "BuildCommand": "npm.cmd run-script build",
+      "StartCommand": "npm.cmd run-script start"
     }
   },
   "providers": [

@@ -7,6 +7,7 @@ export const fetchAllUserMast = /* GraphQL */ `
     fetchAllUserMast {
       createdAt
       email
+      introduction
       name
       updatedAt
       userIcon {
@@ -24,6 +25,7 @@ export const fetchMyUserMast = /* GraphQL */ `
     fetchMyUserMast {
       createdAt
       email
+      introduction
       name
       updatedAt
       userIcon {
@@ -41,6 +43,7 @@ export const fetchPostByPostID = /* GraphQL */ `
     fetchPostByPostID(postID: $postID) {
       createdAt
       deletedAt
+      description
       image {
         bucket
         key
@@ -57,6 +60,7 @@ export const fetchPostsByOwnerUserID = /* GraphQL */ `
     fetchPostsByOwnerUserID(userID: $userID) {
       createdAt
       deletedAt
+      description
       image {
         bucket
         key
@@ -73,6 +77,7 @@ export const fetchUserMastByUserID = /* GraphQL */ `
     fetchUserMastByUserID(userID: $userID) {
       createdAt
       email
+      introduction
       name
       updatedAt
       userIcon {

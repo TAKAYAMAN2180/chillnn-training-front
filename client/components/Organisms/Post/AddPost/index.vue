@@ -1,20 +1,24 @@
 <template>
-    <div class="image_add_container">
-        <div class="image">
-            <img v-if="base64" :src="base64" class="image_item" />
-            <div v-else class="image_item_blanc">
+    <div class='image_add_container'>
+        <div class='image'>
+            <img v-if='base64' :src='base64' class='image_item' />
+            <div v-else class='image_item_blanc'>
                 ここをクリックして画像をアップロード
             </div>
-            <input class="image_input" type="file" @change="getImageFile" />
+            <input class='image_input' type='file' @change='getImageFile' />
         </div>
-        <div class="button">
-            <app-button :disabled="!base64" @click="register"
-                >投稿する</app-button
+        <div class='button'>
+            <textarea v-model='textFieldValue' rows="10" cols="60">ここに記入してください</textarea>
+        </div>
+        <div class='button'>
+            <app-button :disabled='!base64' @click='register'
+            >投稿する
+            </app-button
             >
         </div>
     </div>
 </template>
-<script lang="ts">
+<script lang='ts'>
 import { PostModel } from 'chillnn-training-abr'
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
 // component
@@ -24,12 +28,13 @@ import { HTMLInputEvent, getImage } from '~/util/imageUtil'
 
 @Component({
     components: {
-        AppButton,
-    },
+        AppButton
+    }
 })
 export default class AddPost extends Vue {
     @Prop({ required: true }) postModel!: PostModel
     public base64: string = ''
+    public textFieldValue: string = ''
 
     @AsyncLoadingAndErrorHandle()
     public async getImageFile(e: HTMLInputEvent) {
@@ -40,12 +45,13 @@ export default class AddPost extends Vue {
 
     @AsyncLoadingAndErrorHandle()
     public async register() {
+        this.postModel.description = this.textFieldValue
         await this.postModel.register()
         this.$emit('registered')
     }
 }
 </script>
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
 .image_add_container {
     .image {
         width: 100%;

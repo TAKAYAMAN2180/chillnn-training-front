@@ -22,7 +22,7 @@
             <add-post
                 v-if="blancPost"
                 :post-model="blancPost"
-                @registered="registered"
+                @registeredPost="registered"
             />
         </app-model>
     </div>

@@ -2,6 +2,17 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const addComment = /* GraphQL */ `
+  mutation AddComment($input: CommentMastInput!) {
+    addComment(input: $input) {
+      comment
+      commentID
+      commentUserID
+      createdAt
+      postID
+    }
+  }
+`;
 export const addPost = /* GraphQL */ `
   mutation AddPost($input: PostMastInput!) {
     addPost(input: $input) {

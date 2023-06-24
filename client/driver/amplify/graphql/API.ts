@@ -2,6 +2,23 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
+export type CommentMastInput = {
+  comment: string,
+  commentID: string,
+  commentUserID: string,
+  createdAt: number,
+  postID: string,
+};
+
+export type CommentMast = {
+  __typename: "CommentMast",
+  comment: string,
+  commentID: string,
+  commentUserID: string,
+  createdAt: number,
+  postID: string,
+};
+
 export type PostMastInput = {
   createdAt: number,
   deletedAt?: number | null,
@@ -55,6 +72,21 @@ export type UserMast = {
   updatedAt: number,
   userIcon?: S3Object | null,
   userID: string,
+};
+
+export type AddCommentMutationVariables = {
+  input: CommentMastInput,
+};
+
+export type AddCommentMutation = {
+  addComment:  {
+    __typename: "CommentMast",
+    comment: string,
+    commentID: string,
+    commentUserID: string,
+    createdAt: number,
+    postID: string,
+  },
 };
 
 export type AddPostMutationVariables = {
@@ -140,6 +172,21 @@ export type FetchAllUserMastQuery = {
       url: string,
     } | null,
     userID: string,
+  } >,
+};
+
+export type FetchCommentsByPostIDQueryVariables = {
+  postID: string,
+};
+
+export type FetchCommentsByPostIDQuery = {
+  fetchCommentsByPostID:  Array< {
+    __typename: "CommentMast",
+    comment: string,
+    commentID: string,
+    commentUserID: string,
+    createdAt: number,
+    postID: string,
   } >,
 };
 

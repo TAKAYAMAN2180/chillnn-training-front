@@ -8,13 +8,12 @@
             <input class='image_input' type='file' @change='getImageFile' />
         </div>
         <div class='button'>
-            <textarea v-model='textFieldValue' rows="10" cols="60">ここに記入してください</textarea>
+            <textarea v-model='textFieldValue' rows='10' cols='60'>ここに記入してください</textarea>
         </div>
         <div class='button'>
-            <app-button :disabled='!base64' @click='register'
-            >投稿する
-            </app-button
-            >
+            <app-button :disabled='!base64' @click='register'>
+                投稿する
+            </app-button>
         </div>
     </div>
 </template>
@@ -47,7 +46,7 @@ export default class AddPost extends Vue {
     public async register() {
         this.postModel.description = this.textFieldValue
         await this.postModel.register()
-        this.$emit('registered')
+        this.$emit('registeredPost')
     }
 }
 </script>

@@ -1,20 +1,21 @@
 <template>
     <div
-        v-show="localValue"
-        class="modal_wrapper"
-        @click.self="localValue = false"
+        v-show='localValue'
+        class='modal_wrapper'
+        @click.self='localValue = false'
     >
-        <div class="inner">
+        <div class='inner'>
             <slot />
         </div>
     </div>
 </template>
-<script lang="ts">
+<script lang='ts'>
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
 
 @Component({})
 export default class AppModal extends Vue {
     @Prop({ required: true }) value!: boolean
+
     public get localValue() {
         return this.value
     }
@@ -24,7 +25,7 @@ export default class AppModal extends Vue {
     }
 }
 </script>
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
 .modal_wrapper {
     position: fixed;
     width: 100vw;
@@ -38,10 +39,11 @@ export default class AppModal extends Vue {
 
     .inner {
         box-sizing: border-box;
-        max-width: 800px;
+        max-width: 1000px;
         background-color: white;
-        padding: 50px 100px;
         border-radius: 25px;
+        padding: 5vh;
+
 
         @media only screen and (max-width: $spSize) {
             font-size: 14px;

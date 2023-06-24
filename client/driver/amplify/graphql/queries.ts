@@ -20,6 +20,17 @@ export const fetchAllUserMast = /* GraphQL */ `
     }
   }
 `;
+export const fetchCommentsByPostID = /* GraphQL */ `
+  query FetchCommentsByPostID($postID: ID!) {
+    fetchCommentsByPostID(postID: $postID) {
+      comment
+      commentID
+      commentUserID
+      createdAt
+      postID
+    }
+  }
+`;
 export const fetchMyUserMast = /* GraphQL */ `
   query FetchMyUserMast {
     fetchMyUserMast {

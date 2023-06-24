@@ -7,7 +7,7 @@
                 <p>コメント内容を入力してください。</p>
                 <input v-model='inputStr' :style='{width: "70vh",height:"2.5em"}' />
                 <button class='comment-regist-btn' :disabled='false' @click='register'>
-                    <img :style='{height: "1.5em",width: "1.5em"}' src='@/static/send_btn.webp' />
+                    <img :style='{height: "1.5em",width: "1.5em"}' src='~/assets/img/send_btn.webp' />
                 </button>
             </div>
         </div>
@@ -40,7 +40,6 @@ export default class AddComment extends Vue {
             this.$emit('registeredComment')
         }
     }
-
 
 
 }

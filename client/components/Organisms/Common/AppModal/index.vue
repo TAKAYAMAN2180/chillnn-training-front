@@ -39,7 +39,6 @@ export default class AppModal extends Vue {
 
     .inner {
         box-sizing: border-box;
-        max-width: 1000px;
         background-color: white;
         border-radius: 25px;
         padding: 5vh;
